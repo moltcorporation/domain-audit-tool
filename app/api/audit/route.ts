@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
+import { createHash } from "crypto";
 import { getDb } from "@/lib/db";
-import { audits, auditResults } from "@/db/schema";
+import { audits, auditResults, auditLogs } from "@/db/schema";
+import { sql } from "drizzle-orm";
 import { lookupDns } from "@/lib/checks/dns";
 import { checkPropagation } from "@/lib/checks/propagation";
 import { checkSsl } from "@/lib/checks/ssl";
@@ -8,6 +10,10 @@ import { lookupWhois } from "@/lib/checks/whois";
 import { scoreHeaders } from "@/lib/checks/headers";
 import { fetchAndParseMeta } from "@/lib/checks/meta-parser";
 import { scoreMetaData } from "@/lib/checks/meta-scoring";
+import { checkProAccess, buildCheckoutUrl } from "@/lib/stripe";
+
+const FREE_LIMIT = 5;
+const WINDOW_MS = 24 * 60 * 60 * 1000;
 
 function cleanDomain(input: string): string {
   let domain = input.trim().toLowerCase();
@@ -44,6 +50,46 @@ export async function POST(req: NextRequest) {
   const domain = cleanDomain(rawDomain);
   if (!DOMAIN_REGEX.test(domain) || domain.length > 253) {
     return NextResponse.json({ error: "Invalid domain" }, { status: 400 });
+  }
+
+  // Check Pro status
+  const proEmail = req.cookies.get("recon_pro_email")?.value;
+  let isPro = false;
+  if (proEmail) {
+    isPro = await checkProAccess(proEmail);
+  }
+
+  // Rate limiting for free users
+  const forwarded = req.headers.get("x-forwarded-for");
+  const ip = forwarded?.split(",")[0]?.trim() || "unknown";
+  const ipHash = createHash("sha256").update(ip).digest("hex");
+
+  if (!isPro) {
+    try {
+      const windowStart = new Date(Date.now() - WINDOW_MS);
+      const [countResult] = await getDb()
+        .select({ count: sql<number>`count(*)::int` })
+        .from(auditLogs)
+        .where(
+          sql`${auditLogs.ipHash} = ${ipHash} AND ${auditLogs.auditedAt} >= ${windowStart}`
+        );
+
+      const used = countResult?.count ?? 0;
+
+      if (used >= FREE_LIMIT) {
+        return NextResponse.json(
+          {
+            error: "Daily audit limit reached. Upgrade to Pro for unlimited scans.",
+            remaining: 0,
+            limit: FREE_LIMIT,
+            upgradeUrl: buildCheckoutUrl(),
+          },
+          { status: 429 }
+        );
+      }
+    } catch {
+      console.error("Rate limit check failed, allowing audit");
+    }
   }
 
   const url = `https://${domain}`;
@@ -133,11 +179,17 @@ export async function POST(req: NextRequest) {
     );
   } catch (err) {
     console.error("Failed to save audit results:", err);
-    // Don't fail the response — return results even if DB save fails
+  }
+
+  // Log the audit for rate limiting
+  try {
+    await getDb().insert(auditLogs).values({ ipHash });
+  } catch {
+    console.error("Failed to log audit for rate limiting");
   }
 
   // Build response
-  const response: Record<string, unknown> = { domain, healthScore, grade, auditId };
+  const response: Record<string, unknown> = { domain, healthScore, grade, auditId, isPro };
   for (const check of checks) {
     response[check.type] = check.data;
   }
