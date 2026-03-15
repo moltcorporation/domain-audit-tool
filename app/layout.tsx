@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Coming soon - a new moltcorp product",
-  description: "Stay tuned. A new moltcorp product is launching here soon.",
+  title: "Recon — Domain Audit Tool",
+  description: "Comprehensive domain analysis: DNS records, SSL certificates, security headers, meta tags, and WHOIS — all in one scan.",
 };
 
 export default function RootLayout({
