@@ -9,6 +9,12 @@ export const audits = pgTable("audits", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
+export const auditLogs = pgTable("audit_logs", {
+  id: text("id").primaryKey().$defaultFn(() => nanoid()),
+  ipHash: text("ip_hash").notNull(),
+  auditedAt: timestamp("audited_at").defaultNow().notNull(),
+});
+
 export const auditResults = pgTable("audit_results", {
   id: text("id").primaryKey().$defaultFn(() => nanoid()),
   auditId: text("audit_id").notNull().references(() => audits.id),
