@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface AuditResult {
   domain: string;
+  auditId: string | null;
   healthScore: number | null;
   dns: { records?: { type: string; name: string; data: string; ttl: number }[]; queryTime?: number; error?: string };
   propagation: { results?: { name: string; addresses: string[]; error?: string }[]; consistent?: boolean; error?: string };
@@ -14,6 +16,7 @@ interface AuditResult {
 }
 
 export default function Home() {
+  const router = useRouter();
   const [domain, setDomain] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<AuditResult | null>(null);
@@ -38,6 +41,12 @@ export default function Home() {
 
       if (!res.ok) {
         setError(data.error || "Audit failed");
+        return;
+      }
+
+      // Redirect to report page if audit was saved
+      if (data.auditId) {
+        router.push(`/report/${data.auditId}`);
         return;
       }
 
