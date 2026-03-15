@@ -3,6 +3,7 @@ import { audits, auditResults } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import ReportTabs from "./report-tabs";
 
 export const dynamic = "force-dynamic";
 
@@ -48,16 +49,25 @@ export default async function ReportPage({ params }: Props) {
     return "bg-red-500/20 text-red-400 border-red-500/30";
   }
 
+  // Score breakdown for summary cards
+  const scoreCards = [
+    { label: "DNS", key: "dns" },
+    { label: "SSL", key: "ssl" },
+    { label: "Headers", key: "headers" },
+    { label: "Meta", key: "meta" },
+    { label: "WHOIS", key: "whois" },
+  ];
+
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
       <main className="max-w-4xl mx-auto px-6 py-16">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <a href="/" className="text-sm text-zinc-500 hover:text-zinc-300 mb-4 inline-block">&larr; New scan</a>
           <h1 className="text-3xl font-bold tracking-tight mb-2">{audit.domain}</h1>
           {audit.healthScore !== null && (
             <div className="mt-4">
-              <span className={`text-5xl font-bold ${getScoreColor(audit.healthScore)}`}>
+              <span className={`text-6xl font-bold ${getScoreColor(audit.healthScore)}`}>
                 {audit.healthScore}
               </span>
               {audit.grade && (
@@ -72,113 +82,38 @@ export default async function ReportPage({ params }: Props) {
           )}
         </div>
 
-        {/* Check Results */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* DNS */}
-          {checkMap.dns && (
-            <div className="p-5 bg-zinc-900 border border-zinc-800 rounded-lg">
-              <h3 className="text-sm font-medium text-zinc-400 mb-3">DNS Records</h3>
-              {checkMap.dns.data.error ? (
-                <p className="text-red-400 text-sm">{String(checkMap.dns.data.error)}</p>
-              ) : (
-                <>
-                  <div className="text-2xl font-bold">
-                    {Array.isArray(checkMap.dns.data.records) ? checkMap.dns.data.records.length : 0} records
-                  </div>
-                  {checkMap.dns.data.queryTime && (
-                    <div className="text-zinc-500 text-xs mt-1">{String(checkMap.dns.data.queryTime)}ms</div>
-                  )}
-                </>
-              )}
-            </div>
-          )}
-
-          {/* SSL */}
-          {checkMap.ssl && (
-            <div className="p-5 bg-zinc-900 border border-zinc-800 rounded-lg">
-              <h3 className="text-sm font-medium text-zinc-400 mb-3">SSL Certificate</h3>
-              {checkMap.ssl.data.error ? (
-                <p className="text-red-400 text-sm">{String(checkMap.ssl.data.error)}</p>
-              ) : (
-                <div className="flex items-baseline gap-3">
-                  <div className="text-2xl font-bold">{checkMap.ssl.score}</div>
-                  {checkMap.ssl.grade && (
-                    <span className={`px-2 py-0.5 rounded border text-xs font-medium ${getGradeBg(checkMap.ssl.score || 0)}`}>
-                      {checkMap.ssl.grade}
-                    </span>
-                  )}
-                </div>
-              )}
-            </div>
-          )}
-
-          {/* Headers */}
-          {checkMap.headers && (
-            <div className="p-5 bg-zinc-900 border border-zinc-800 rounded-lg">
-              <h3 className="text-sm font-medium text-zinc-400 mb-3">Security Headers</h3>
-              {checkMap.headers.data.error ? (
-                <p className="text-red-400 text-sm">{String(checkMap.headers.data.error)}</p>
-              ) : (
-                <div className="text-2xl font-bold">{checkMap.headers.score}</div>
-              )}
-            </div>
-          )}
-
-          {/* Meta */}
-          {checkMap.meta && (
-            <div className="p-5 bg-zinc-900 border border-zinc-800 rounded-lg">
-              <h3 className="text-sm font-medium text-zinc-400 mb-3">Meta Tags</h3>
-              {checkMap.meta.data.error ? (
-                <p className="text-red-400 text-sm">{String(checkMap.meta.data.error)}</p>
-              ) : (
-                <div className="text-2xl font-bold">{checkMap.meta.score}</div>
-              )}
-            </div>
-          )}
-
-          {/* WHOIS */}
-          {checkMap.whois && (
-            <div className="p-5 bg-zinc-900 border border-zinc-800 rounded-lg">
-              <h3 className="text-sm font-medium text-zinc-400 mb-3">WHOIS / RDAP</h3>
-              {checkMap.whois.data.error ? (
-                <p className="text-red-400 text-sm">{String(checkMap.whois.data.error)}</p>
-              ) : (
-                <div className="flex items-baseline gap-3">
-                  <div className="text-2xl font-bold">{checkMap.whois.score}</div>
-                  {checkMap.whois.grade && (
-                    <span className={`px-2 py-0.5 rounded border text-xs font-medium ${getGradeBg(checkMap.whois.score || 0)}`}>
-                      {checkMap.whois.grade}
-                    </span>
-                  )}
-                </div>
-              )}
-            </div>
-          )}
-
-          {/* Propagation */}
-          {checkMap.propagation && (
-            <div className="p-5 bg-zinc-900 border border-zinc-800 rounded-lg">
-              <h3 className="text-sm font-medium text-zinc-400 mb-3">DNS Propagation</h3>
-              {checkMap.propagation.data.error ? (
-                <p className="text-red-400 text-sm">{String(checkMap.propagation.data.error)}</p>
-              ) : (
-                <div className="text-2xl font-bold">
-                  {checkMap.propagation.data.consistent ? (
-                    <span className="text-emerald-400">Consistent</span>
-                  ) : (
-                    <span className="text-amber-400">Propagating</span>
-                  )}
-                </div>
-              )}
-            </div>
-          )}
+        {/* Score summary cards */}
+        <div className="grid grid-cols-5 gap-2 mb-8">
+          {scoreCards.map((card) => {
+            const check = checkMap[card.key];
+            const score = check?.score;
+            const hasError = !!check?.data?.error;
+            return (
+              <div key={card.key} className="text-center p-3 bg-zinc-900 border border-zinc-800 rounded-lg">
+                <div className="text-xs text-zinc-500 mb-1">{card.label}</div>
+                {hasError ? (
+                  <div className="text-sm text-red-400">Err</div>
+                ) : score != null ? (
+                  <div className={`text-lg font-bold ${getScoreColor(score)}`}>{score}</div>
+                ) : (
+                  <div className="text-sm text-zinc-600">—</div>
+                )}
+              </div>
+            );
+          })}
         </div>
 
+        {/* Tabbed detail view */}
+        <ReportTabs checks={checkMap} />
+
+        {/* Footer */}
         <div className="text-center mt-10 text-zinc-600 text-xs">
           Powered by{" "}
           <a href="https://moltcorporation.com" target="_blank" className="text-zinc-400 hover:text-white">
             Moltcorp
           </a>
+          {" "}&middot;{" "}
+          <a href="/pricing" className="text-zinc-400 hover:text-white">Pricing</a>
         </div>
       </main>
     </div>
