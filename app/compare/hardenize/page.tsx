@@ -1,4 +1,29 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+const baseUrl = "https://domain-audit-tool-moltcorporation.vercel.app";
+
+export const metadata: Metadata = {
+  title: "Hardenize Alternative — Free Domain Audits | Recon",
+  description:
+    "Hardenize charges enterprise pricing ($100+/mo). Recon runs DNS, SSL, security headers, meta tags, and WHOIS in one scan for free. Pro at $9/mo.",
+  alternates: {
+    canonical: `${baseUrl}/compare/hardenize`,
+  },
+  openGraph: {
+    title: "Hardenize Alternative — Recon",
+    description:
+      "5 domain checks in one scan. Hardenize is enterprise-priced — Recon is free or $9/mo.",
+    type: "website",
+    siteName: "Recon",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hardenize Alternative — Recon",
+    description:
+      "Free domain audits. Hardenize charges $100+/mo — Recon Pro is $9/mo.",
+  },
+};
 
 function ShieldIcon({ className }: { className?: string }) {
   return (
@@ -30,57 +55,57 @@ function ShieldIcon({ className }: { className?: string }) {
 const comparisonRows = [
   {
     feature: "Scope",
-    headerguard: "Focused on HTTP security headers",
+    ours: "DNS + SSL + headers + meta tags + WHOIS in one scan",
     competitor: "Broad — covers email, DNS, HTTP, certificates",
   },
   {
     feature: "Fix suggestions",
-    headerguard: "Copy-paste fix code for every issue",
+    ours: "Copy-paste fix code for every issue",
     competitor: "General guidance, no inline fixes",
   },
   {
     feature: "Scoring",
-    headerguard: "Numeric score out of 100 with pass/warn/fail per header",
+    ours: "Numeric score out of 100 with pass/warn/fail per header",
     competitor: "Pass/warning/fail per category, no overall score",
   },
   {
     feature: "Speed",
-    headerguard: "Instant results — under 3 seconds",
+    ours: "Instant results — under 3 seconds",
     competitor: "Full scan takes 30–60 seconds",
   },
   {
     feature: "Cookie analysis",
-    headerguard: "Checks Secure, HttpOnly, and SameSite on every cookie",
+    ours: "Checks Secure, HttpOnly, and SameSite on every cookie",
     competitor: "Basic cookie checks within broader scan",
   },
   {
     feature: "Info disclosure",
-    headerguard: "Detects Server, X-Powered-By, and tech stack leaks",
+    ours: "Detects Server, X-Powered-By, and tech stack leaks",
     competitor: "Limited info disclosure detection",
   },
   {
     feature: "Shareable reports",
-    headerguard: "Permanent URL for every scan result",
+    ours: "Permanent URL for every scan result",
     competitor: "Reports behind account login",
   },
   {
     feature: "Free tier",
-    headerguard: "Free with rate limits, no signup",
+    ours: "Free with rate limits, no signup",
     competitor: "Free tier with account required",
   },
   {
     feature: "Paid plans",
-    headerguard: "$9/mo for unlimited scans",
+    ours: "$9/mo for unlimited scans",
     competitor: "Enterprise pricing (custom quotes)",
   },
   {
     feature: "Target audience",
-    headerguard: "Developers fixing header issues quickly",
+    ours: "Developers fixing header issues quickly",
     competitor: "Enterprise security teams running full audits",
   },
   {
     feature: "Ecosystem",
-    headerguard: "Part of Moltcorp products (SSL, DNS, Meta, Uptime, WHOIS)",
+    ours: "Part of Moltcorp products (SSL, DNS, Meta, Uptime, WHOIS)",
     competitor: "Standalone platform",
   },
 ];
@@ -262,7 +287,7 @@ export default function HardenizeComparison() {
                       {row.feature}
                     </td>
                     <td className="px-4 py-3 text-slate-700 dark:text-slate-300">
-                      {row.headerguard}
+                      {row.ours}
                     </td>
                     <td className="px-4 py-3 text-slate-500 dark:text-slate-500">
                       {row.competitor}
