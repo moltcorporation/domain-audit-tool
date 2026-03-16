@@ -75,7 +75,7 @@ const comparisonRows = [
   },
   {
     feature: "Ecosystem",
-    headerguard: "Part of Moltcorp suite (SSL, DNS, Meta, Uptime, WHOIS)",
+    headerguard: "Part of Moltcorp products (SSL, DNS, Meta, Uptime, WHOIS)",
     competitor: "Standalone tool",
   },
 ];
@@ -90,7 +90,7 @@ const faqs = [
     question:
       "What does Recon check that SecurityHeaders.com does not?",
     answer:
-      "HeaderGuard analyzes cookie security (Secure, HttpOnly, SameSite flags), detects information disclosure headers (Server, X-Powered-By), gives you a numeric score out of 100, and provides copy-paste fix code for every issue found. SecurityHeaders.com gives a letter grade and links to external docs.",
+      "Recon analyzes cookie security (Secure, HttpOnly, SameSite flags), detects information disclosure headers (Server, X-Powered-By), gives you a numeric score out of 100, and provides copy-paste fix code for every issue found. SecurityHeaders.com gives a letter grade and links to external docs.",
   },
   {
     question: "Can I share my Recon report with my team?",
@@ -115,7 +115,7 @@ const jsonLd = [
     url: "https://domain-audit-tool-moltcorporation.vercel.app/compare/securityheaders",
     mainEntity: {
       "@type": "SoftwareApplication",
-      name: "HeaderGuard",
+      name: "Recon",
       applicationCategory: "SecurityApplication",
       operatingSystem: "Any",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -399,24 +399,12 @@ export default function SecurityHeadersComparison() {
           <div className="flex flex-wrap gap-3">
             {[
               {
-                label: "Meta Tags",
+                label: "Recon",
                 href: "https://domain-audit-tool-moltcorporation.vercel.app",
               },
               {
-                label: "SSL Certificate",
-                href: "https://domain-audit-tool-moltcorporation.vercel.app",
-              },
-              {
-                label: "DNS Records",
-                href: "https://domain-audit-tool-moltcorporation.vercel.app",
-              },
-              {
-                label: "Uptime Monitor",
+                label: "StatusPing",
                 href: "https://statusping-moltcorporation.vercel.app",
-              },
-              {
-                label: "WHOIS Lookup",
-                href: "https://domain-audit-tool-moltcorporation.vercel.app",
               },
               {
                 label: "Contract Tracker",
@@ -439,26 +427,7 @@ export default function SecurityHeadersComparison() {
 
       <footer className="flex flex-col items-center gap-3 border-t border-indigo-100 px-6 py-6 dark:border-indigo-900/30">
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400 dark:text-slate-500">
-          <span className="font-medium text-zinc-400">Recon — Domain Audit Tool</span>
-          <span className="font-semibold text-indigo-600 dark:text-indigo-400">
-            Recon
-          </span>
-          <a
-            href="https://domain-audit-tool-moltcorporation.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-indigo-600 dark:hover:text-indigo-400"
-          >
-            Recon
-          </a>
-          <a
-            href="https://domain-audit-tool-moltcorporation.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-indigo-600 dark:hover:text-indigo-400"
-          >
-            Recon
-          </a>
+          <span className="font-medium text-zinc-400">Moltcorp Products:</span>
           <a
             href="https://domain-audit-tool-moltcorporation.vercel.app"
             target="_blank"
@@ -474,14 +443,6 @@ export default function SecurityHeadersComparison() {
             className="transition-colors hover:text-indigo-600 dark:hover:text-indigo-400"
           >
             StatusPing
-          </a>
-          <a
-            href="https://domain-audit-tool-moltcorporation.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-indigo-600 dark:hover:text-indigo-400"
-          >
-            Recon
           </a>
           <a
             href="https://federal-contract-tracker-moltcorporation.vercel.app"

@@ -4,14 +4,14 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "DomainTools Alternative — Free Recon with Health Scoring",
   description:
-    "Looking for a DomainTools alternative? Recon is a free domain registration checker with health scoring via modern RDAP protocol. Pro at $5/mo — not $99. No login required.",
+    "Looking for a DomainTools alternative? Recon is a free domain registration checker with health scoring via modern RDAP protocol. Pro at $9/mo — not $99. No login required.",
   alternates: {
     canonical: "https://domain-audit-tool-moltcorporation.vercel.app/compare/domaintools",
   },
   openGraph: {
     title: "DomainTools Alternative — Recon",
     description:
-      "Free alternative to DomainTools. Check WHOIS data with domain health scoring. Pro at $5/mo.",
+      "Free alternative to DomainTools. Check WHOIS data with domain health scoring. Pro at $9/mo.",
     type: "website",
     siteName: "Recon",
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const comparisonRows = [
   {
     feature: "Price",
-    ours: "Free (Pro $5/mo)",
+    ours: "Free (Pro $9/mo)",
     theirs: "$99/mo+",
   },
   {
@@ -85,7 +85,7 @@ const faqs = [
   {
     question: "How much does DomainTools cost?",
     answer:
-      "DomainTools starts at $99/mo for their base tier. Features like historical WHOIS, bulk lookups, and threat intelligence require enterprise pricing. Recon is free for basic lookups and $5/mo for Pro — nearly 20x cheaper.",
+      "DomainTools starts at $99/mo for their base tier. Features like historical WHOIS, bulk lookups, and threat intelligence require enterprise pricing. Recon is free for basic lookups and $9/mo for Pro — nearly 20x cheaper.",
   },
   {
     question: "What is RDAP and why is it better than WHOIS?",
@@ -138,7 +138,7 @@ export default function DomainToolsComparison() {
             Recon is a free, modern alternative to DomainTools. Get
             domain registration data, health scoring, and expiry tracking via
             the modern RDAP protocol — all without creating an account.
-            Pro tier starts at $5/mo, not $99.
+            Pro tier starts at $9/mo, not $99.
           </p>
         </div>
 
@@ -155,7 +155,7 @@ export default function DomainToolsComparison() {
             you health scoring, RDAP-based lookups, and shareable reports for{" "}
             <span className="font-mono font-bold text-violet-300">free</span>.
             Need unlimited lookups, bulk checking, and expiry alerts? Pro is{" "}
-            <span className="font-mono font-bold text-violet-300">$5/mo</span>{" "}
+            <span className="font-mono font-bold text-violet-300">$9/mo</span>{" "}
             — that&apos;s{" "}
             <span className="font-mono text-violet-300">nearly 20x cheaper</span>.
           </p>
@@ -227,8 +227,8 @@ export default function DomainToolsComparison() {
             <li>You want a <strong className="text-violet-200">health score</strong> — see expiry risk, domain age, registrar lock, and DNSSEC in one scored report.</li>
             <li>You want <strong className="text-violet-200">shareable reports</strong> with permanent URLs to send to teammates or clients.</li>
             <li>You want <strong className="text-violet-200">modern RDAP protocol</strong> — structured data, not legacy WHOIS text parsing.</li>
-            <li>You need <strong className="text-violet-200">unlimited lookups at $5/mo</strong> instead of $99/mo — nearly 20x cheaper.</li>
-            <li>You want one tool that&apos;s part of the <strong className="text-violet-200">Moltcorp suite</strong> alongside DNS, SSL, headers, meta tags, and uptime monitoring.</li>
+            <li>You need <strong className="text-violet-200">unlimited lookups at $9/mo</strong> instead of $99/mo — nearly 20x cheaper.</li>
+            <li>You want one tool that&apos;s part of the <strong className="text-violet-200">Moltcorp products</strong> alongside DNS, SSL, headers, meta tags, and uptime monitoring.</li>
           </ul>
         </div>
 
@@ -348,36 +348,20 @@ export default function DomainToolsComparison() {
               Recon &rarr;
             </a>
             <a
-              href="https://domain-audit-tool-moltcorporation.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-violet-800 px-4 py-2 font-mono text-sm font-medium text-violet-300 transition-colors hover:border-violet-600 hover:bg-violet-950/50"
-            >
-              Recon &rarr;
-            </a>
-            <a
-              href="https://domain-audit-tool-moltcorporation.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-violet-800 px-4 py-2 font-mono text-sm font-medium text-violet-300 transition-colors hover:border-violet-600 hover:bg-violet-950/50"
-            >
-              Recon &rarr;
-            </a>
-            <a
-              href="https://domain-audit-tool-moltcorporation.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-violet-800 px-4 py-2 font-mono text-sm font-medium text-violet-300 transition-colors hover:border-violet-600 hover:bg-violet-950/50"
-            >
-              Recon &rarr;
-            </a>
-            <a
               href="https://statusping-moltcorporation.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-violet-800 px-4 py-2 font-mono text-sm font-medium text-violet-300 transition-colors hover:border-violet-600 hover:bg-violet-950/50"
             >
               StatusPing &rarr;
+            </a>
+            <a
+              href="https://federal-contract-tracker-moltcorporation.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-violet-800 px-4 py-2 font-mono text-sm font-medium text-violet-300 transition-colors hover:border-violet-600 hover:bg-violet-950/50"
+            >
+              Contract Tracker &rarr;
             </a>
           </div>
         </div>
@@ -386,11 +370,7 @@ export default function DomainToolsComparison() {
       {/* Footer */}
       <footer className="relative z-10 flex flex-col items-center gap-3 px-6 py-6">
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-violet-700">
-          <span className="font-medium text-violet-500">Moltcorp Suite:</span>
-          <span className="font-medium text-violet-400">Recon</span>
-          <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-violet-400">Recon</a>
-          <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-violet-400">Recon</a>
-          <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-violet-400">Recon</a>
+          <span className="font-medium text-violet-500">Moltcorp Products:</span>
           <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-violet-400">Recon</a>
           <a href="https://statusping-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-violet-400">StatusPing</a>
           <a href="https://federal-contract-tracker-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-violet-400">Contract Tracker</a>

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Whois.com Alternative — Free Recon with Health Scoring",
   description:
-    "Looking for a whois.com alternative? Recon is a free domain registration checker with health scoring via modern RDAP protocol. No upsells, no domain marketplace ads. Pro at $5/mo.",
+    "Looking for a whois.com alternative? Recon is a free domain registration checker with health scoring via modern RDAP protocol. No upsells, no domain marketplace ads. Pro at $9/mo.",
   alternates: {
     canonical: "https://domain-audit-tool-moltcorporation.vercel.app/compare/whois-com",
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const comparisonRows = [
   {
     feature: "Price",
-    ours: "Free (Pro $5/mo)",
+    ours: "Free (Pro $9/mo)",
     theirs: "Free (with ads)",
   },
   {
@@ -95,7 +95,7 @@ const faqs = [
   {
     question: "Is Recon really free?",
     answer:
-      "Yes. Basic lookups with health scoring are completely free and require no account. The Pro tier at $5/mo adds unlimited lookups, bulk checking, and expiry alerts for users who need higher volume.",
+      "Yes. Basic lookups with health scoring are completely free and require no account. The Pro tier at $9/mo adds unlimited lookups, bulk checking, and expiry alerts for users who need higher volume.",
   },
 ];
 
@@ -157,7 +157,7 @@ export default function WhoisComComparison() {
             </span>
             . See expiry risk, domain age, DNSSEC, and registrar lock status
             in one scored report. Free for basic lookups, or{" "}
-            <span className="font-mono font-bold text-violet-300">$5/mo</span>{" "}
+            <span className="font-mono font-bold text-violet-300">$9/mo</span>{" "}
             for Pro with unlimited lookups and bulk checking.
           </p>
         </div>
@@ -228,8 +228,8 @@ export default function WhoisComComparison() {
             <li>You want a <strong className="text-violet-200">health score</strong> — see expiry risk, domain age, registrar lock, DNSSEC, and data completeness in one scored report with a letter grade.</li>
             <li>You want <strong className="text-violet-200">shareable reports</strong> — every lookup gets a permanent URL you can send to teammates or clients.</li>
             <li>You want <strong className="text-violet-200">modern RDAP protocol</strong> — structured data from IANA&apos;s official successor to legacy WHOIS.</li>
-            <li>You want one tool that&apos;s part of the <strong className="text-violet-200">Moltcorp suite</strong> alongside DNS, SSL, headers, meta tags, and uptime monitoring.</li>
-            <li>You need <strong className="text-violet-200">Pro for $5/mo</strong> — unlimited lookups, bulk checking, and expiry alerts at a straightforward price.</li>
+            <li>You want one tool that&apos;s part of the <strong className="text-violet-200">Moltcorp products</strong> alongside DNS, SSL, headers, meta tags, and uptime monitoring.</li>
+            <li>You need <strong className="text-violet-200">Pro for $9/mo</strong> — unlimited lookups, bulk checking, and expiry alerts at a straightforward price.</li>
           </ul>
         </div>
 
@@ -349,36 +349,20 @@ export default function WhoisComComparison() {
               Recon &rarr;
             </a>
             <a
-              href="https://domain-audit-tool-moltcorporation.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-violet-800 px-4 py-2 font-mono text-sm font-medium text-violet-300 transition-colors hover:border-violet-600 hover:bg-violet-950/50"
-            >
-              Recon &rarr;
-            </a>
-            <a
-              href="https://domain-audit-tool-moltcorporation.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-violet-800 px-4 py-2 font-mono text-sm font-medium text-violet-300 transition-colors hover:border-violet-600 hover:bg-violet-950/50"
-            >
-              Recon &rarr;
-            </a>
-            <a
-              href="https://domain-audit-tool-moltcorporation.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-violet-800 px-4 py-2 font-mono text-sm font-medium text-violet-300 transition-colors hover:border-violet-600 hover:bg-violet-950/50"
-            >
-              Recon &rarr;
-            </a>
-            <a
               href="https://statusping-moltcorporation.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-violet-800 px-4 py-2 font-mono text-sm font-medium text-violet-300 transition-colors hover:border-violet-600 hover:bg-violet-950/50"
             >
               StatusPing &rarr;
+            </a>
+            <a
+              href="https://federal-contract-tracker-moltcorporation.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-violet-800 px-4 py-2 font-mono text-sm font-medium text-violet-300 transition-colors hover:border-violet-600 hover:bg-violet-950/50"
+            >
+              Contract Tracker &rarr;
             </a>
           </div>
         </div>
@@ -387,11 +371,7 @@ export default function WhoisComComparison() {
       {/* Footer */}
       <footer className="relative z-10 flex flex-col items-center gap-3 px-6 py-6">
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-violet-700">
-          <span className="font-medium text-violet-500">Moltcorp Suite:</span>
-          <span className="font-medium text-violet-400">Recon</span>
-          <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-violet-400">Recon</a>
-          <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-violet-400">Recon</a>
-          <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-violet-400">Recon</a>
+          <span className="font-medium text-violet-500">Moltcorp Products:</span>
           <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-violet-400">Recon</a>
           <a href="https://statusping-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-violet-400">StatusPing</a>
           <a href="https://federal-contract-tracker-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-violet-400">Contract Tracker</a>

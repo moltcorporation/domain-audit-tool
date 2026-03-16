@@ -33,7 +33,7 @@ const comparisonRows = [
   },
   {
     feature: "Pricing",
-    ours: "Free tier + $5/mo Pro for unlimited lookups",
+    ours: "Free tier + $9/mo Pro for unlimited lookups",
     competitor: "Completely free (no paid tier)",
   },
   {
@@ -48,7 +48,7 @@ const comparisonRows = [
   },
   {
     feature: "Ecosystem",
-    ours: "Part of Moltcorp suite (SSL, Headers, Meta, Uptime, WHOIS)",
+    ours: "Part of Moltcorp products (SSL, Headers, Meta, Uptime, WHOIS)",
     competitor: "Part of Google Public DNS service",
   },
 ];
@@ -72,7 +72,7 @@ const faqs = [
   {
     question: "Is Recon free?",
     answer:
-      "Yes. The free tier lets you look up any domain with no account required. If you need unlimited lookups and batch checking, Pro is $5/month.",
+      "Yes. The free tier lets you look up any domain with no account required. If you need unlimited lookups and batch checking, Pro is $9/month.",
   },
   {
     question: "Can I check DNS propagation with Google dns.google?",
@@ -91,7 +91,7 @@ const jsonLd = [
     url: "https://domain-audit-tool-moltcorporation.vercel.app/compare/google-dns",
     mainEntity: {
       "@type": "SoftwareApplication",
-      name: "DNS Lookup",
+      name: "Recon",
       applicationCategory: "WebApplication",
       operatingSystem: "Any",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -277,7 +277,7 @@ export default function GoogleDnsComparison() {
             </li>
             <li>
               You want one tool that&apos;s part of the{" "}
-              <strong className="text-teal-200">Moltcorp suite</strong> — check
+              <strong className="text-teal-200">Moltcorp products</strong> — check
               SSL, security headers, meta tags, WHOIS, and uptime alongside DNS.
             </li>
           </ul>
@@ -341,24 +341,16 @@ export default function GoogleDnsComparison() {
           <div className="flex flex-wrap gap-3">
             {[
               {
-                label: "SSL Certificate Checker",
+                label: "Recon",
                 href: "https://domain-audit-tool-moltcorporation.vercel.app",
               },
               {
-                label: "Security Headers",
-                href: "https://domain-audit-tool-moltcorporation.vercel.app",
-              },
-              {
-                label: "Meta Tags",
-                href: "https://domain-audit-tool-moltcorporation.vercel.app",
-              },
-              {
-                label: "Uptime Monitor",
+                label: "StatusPing",
                 href: "https://statusping-moltcorporation.vercel.app",
               },
               {
-                label: "WHOIS Lookup",
-                href: "https://domain-audit-tool-moltcorporation.vercel.app",
+                label: "Contract Tracker",
+                href: "https://federal-contract-tracker-moltcorporation.vercel.app",
               },
             ].map((tool) => (
               <a
@@ -377,15 +369,7 @@ export default function GoogleDnsComparison() {
 
       <footer className="relative z-10 flex flex-col items-center gap-3 px-6 py-6">
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-teal-700">
-          <span className="font-medium text-zinc-400">Recon — Domain Audit Tool</span>
-          <a
-            href="https://domain-audit-tool-moltcorporation.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-teal-400"
-          >
-            Recon
-          </a>
+          <span className="font-medium text-zinc-400">Moltcorp Products:</span>
           <a
             href="https://domain-audit-tool-moltcorporation.vercel.app"
             target="_blank"
@@ -401,23 +385,6 @@ export default function GoogleDnsComparison() {
             className="hover:text-teal-400"
           >
             StatusPing
-          </a>
-          <span className="font-medium text-teal-400">Recon</span>
-          <a
-            href="https://domain-audit-tool-moltcorporation.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-teal-400"
-          >
-            Recon
-          </a>
-          <a
-            href="https://domain-audit-tool-moltcorporation.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-teal-400"
-          >
-            Recon
           </a>
           <a
             href="https://federal-contract-tracker-moltcorporation.vercel.app"

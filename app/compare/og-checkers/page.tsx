@@ -34,7 +34,7 @@ const faqs = [
   {
     question: "Which OG checker shows the most platforms?",
     answer:
-      "MetaShield shows previews for 6 platforms (Twitter/X, LinkedIn, Facebook, Slack, Discord, and Google). OpenGraph.to covers 5 platforms including WhatsApp. Most other tools cover 3-4 platforms.",
+      "Recon shows previews for 6 platforms (Twitter/X, LinkedIn, Facebook, Slack, Discord, and Google). OpenGraph.to covers 5 platforms including WhatsApp. Most other tools cover 3-4 platforms.",
   },
   {
     question: "Do I need to pay for an OG checker?",
@@ -44,7 +44,7 @@ const faqs = [
   {
     question: "Can an OG checker fix my tags for me?",
     answer:
-      "MetaShield and OpenGraph.to provide fix suggestions — Recon gives copy-paste HTML snippets for every issue found. Most other tools only show what tags exist without suggesting improvements.",
+      "Recon and OpenGraph.to provide fix suggestions — Recon gives copy-paste HTML snippets for every issue found. Most other tools only show what tags exist without suggesting improvements.",
   },
 ];
 
@@ -103,7 +103,7 @@ function EyeIcon({ className }: { className?: string }) {
 
 const tools = [
   {
-    name: "MetaShield",
+    name: "Recon",
     url: "https://domain-audit-tool-moltcorporation.vercel.app",
     platforms: 6,
     scoring: true,
@@ -558,10 +558,7 @@ export default function OGCheckersComparison() {
 
       <footer className="flex flex-col items-center gap-3 border-t border-orange-100 px-6 py-6 dark:border-orange-900/20">
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-stone-400 dark:text-stone-500">
-          <span className="font-medium text-zinc-400">Recon — Domain Audit Tool</span>
-          <span className="font-semibold text-orange-600 dark:text-orange-400">
-            Recon
-          </span>
+          <span className="font-medium text-zinc-400">Moltcorp Products:</span>
           <a
             href="https://domain-audit-tool-moltcorporation.vercel.app"
             target="_blank"
@@ -579,28 +576,12 @@ export default function OGCheckersComparison() {
             StatusPing
           </a>
           <a
-            href="https://domain-audit-tool-moltcorporation.vercel.app"
+            href="https://federal-contract-tracker-moltcorporation.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-orange-600 dark:hover:text-orange-400"
           >
-            Recon
-          </a>
-          <a
-            href="https://domain-audit-tool-moltcorporation.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-orange-600 dark:hover:text-orange-400"
-          >
-            Recon
-          </a>
-          <a
-            href="https://domain-audit-tool-moltcorporation.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-orange-600 dark:hover:text-orange-400"
-          >
-            Recon
+            Contract Tracker
           </a>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-stone-400 dark:text-stone-500">

@@ -44,12 +44,12 @@ const comparisonRows = [
   },
   {
     feature: "Pro tier",
-    ours: "Unlimited checks and batch scanning ($5/mo)",
+    ours: "Unlimited checks and batch scanning ($9/mo)",
     theirs: "Free — but upsells DigiCert certificates",
   },
   {
     feature: "Ecosystem",
-    ours: "Part of Moltcorp suite (Headers, DNS, Meta, Uptime, WHOIS)",
+    ours: "Part of Moltcorp products (Headers, DNS, Meta, Uptime, WHOIS)",
     theirs: "Part of DigiCert's enterprise PKI platform",
   },
 ];
@@ -68,7 +68,7 @@ const faqs = [
   {
     question: "Is DigiCert's SSL tool free?",
     answer:
-      "Yes, DigiCert's SSL Installation Diagnostics Tool is free. However, it exists primarily as a support tool for DigiCert customers and as a lead generation funnel for DigiCert certificate sales. Recon is also free (10 checks/day) with a Pro tier ($5/mo) for unlimited checks and batch scanning.",
+      "Yes, DigiCert's SSL Installation Diagnostics Tool is free. However, it exists primarily as a support tool for DigiCert customers and as a lead generation funnel for DigiCert certificate sales. Recon is also free (10 checks/day) with a Pro tier ($9/mo) for unlimited checks and batch scanning.",
   },
   {
     question: "Should I use both tools?",
@@ -311,11 +311,8 @@ export default function DigiCertComparison() {
           </p>
           <div className="flex flex-wrap gap-3">
             {[
-              { label: "Security Headers", href: "https://domain-audit-tool-moltcorporation.vercel.app" },
-              { label: "DNS Records", href: "https://domain-audit-tool-moltcorporation.vercel.app" },
-              { label: "Meta Tags", href: "https://domain-audit-tool-moltcorporation.vercel.app" },
-              { label: "Uptime Monitor", href: "https://statusping-moltcorporation.vercel.app" },
-              { label: "WHOIS Lookup", href: "https://domain-audit-tool-moltcorporation.vercel.app" },
+              { label: "Recon", href: "https://domain-audit-tool-moltcorporation.vercel.app" },
+              { label: "StatusPing", href: "https://statusping-moltcorporation.vercel.app" },
               { label: "Contract Tracker", href: "https://federal-contract-tracker-moltcorporation.vercel.app" },
             ].map((tool) => (
               <a
@@ -334,13 +331,9 @@ export default function DigiCertComparison() {
 
       <footer className="flex flex-col items-center gap-3 border-t border-emerald-100 px-6 py-6 dark:border-emerald-900/20">
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-400 dark:text-gray-500">
-          <span className="font-medium text-zinc-400">Recon — Domain Audit Tool</span>
-          <span className="font-semibold text-emerald-600 dark:text-emerald-400">Recon</span>
-          <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-emerald-600 dark:hover:text-emerald-400">Recon</a>
-          <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-emerald-600 dark:hover:text-emerald-400">Recon</a>
+          <span className="font-medium text-zinc-400">Moltcorp Products:</span>
           <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-emerald-600 dark:hover:text-emerald-400">Recon</a>
           <a href="https://statusping-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-emerald-600 dark:hover:text-emerald-400">StatusPing</a>
-          <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-emerald-600 dark:hover:text-emerald-400">Recon</a>
           <a href="https://federal-contract-tracker-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-emerald-600 dark:hover:text-emerald-400">Contract Tracker</a>
         </div>
         <span className="text-xs text-gray-400 dark:text-gray-600">
