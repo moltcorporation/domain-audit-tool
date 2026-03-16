@@ -1,4 +1,29 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+const baseUrl = "https://domain-audit-tool-moltcorporation.vercel.app";
+
+export const metadata: Metadata = {
+  title: "SecurityHeaders.com Alternative — Scored Reports with Fixes | Recon",
+  description:
+    "SecurityHeaders.com gives you a grade. Recon gives you a score out of 100 with copy-paste fixes, plus DNS, SSL, meta tags, and WHOIS in one scan. Free, no signup.",
+  alternates: {
+    canonical: `${baseUrl}/compare/securityheaders`,
+  },
+  openGraph: {
+    title: "SecurityHeaders.com Alternative — Recon",
+    description:
+      "Security headers scoring with fix suggestions, plus 4 more domain checks in one scan.",
+    type: "website",
+    siteName: "Recon",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SecurityHeaders.com Alternative — Recon",
+    description:
+      "Scored reports with copy-paste fixes. Plus DNS, SSL, meta tags, and WHOIS.",
+  },
+};
 
 function ShieldIcon({ className }: { className?: string }) {
   return (
@@ -29,54 +54,44 @@ function ShieldIcon({ className }: { className?: string }) {
 
 const comparisonRows = [
   {
+    feature: "Scope",
+    ours: "Headers + DNS + SSL + meta tags + WHOIS in one scan",
+    competitor: "Security headers only",
+  },
+  {
     feature: "Fix suggestions",
-    headerguard: "Copy-paste fix code for every issue",
-    competitor: "Grade only \u2014 no inline fixes",
+    ours: "Copy-paste fix code for every issue",
+    competitor: "Grade only — no inline fixes",
   },
   {
     feature: "Scoring",
-    headerguard: "Numeric score out of 100 with pass/warn/fail per header",
+    ours: "Numeric score out of 100 with pass/warn/fail per header",
     competitor: "Letter grade (A-F) with basic pass/fail",
   },
   {
-    feature: "Report UI",
-    headerguard: "Modern, clean interface with dark mode",
-    competitor: "Basic text output",
-  },
-  {
     feature: "Cookie analysis",
-    headerguard: "Checks Secure, HttpOnly, and SameSite on every cookie",
+    ours: "Checks Secure, HttpOnly, and SameSite on every cookie",
     competitor: "No cookie analysis",
   },
   {
     feature: "Info disclosure",
-    headerguard: "Detects Server, X-Powered-By, and tech stack leaks",
+    ours: "Detects Server, X-Powered-By, and tech stack leaks",
     competitor: "Limited info disclosure checks",
   },
   {
     feature: "Shareable reports",
-    headerguard: "Permanent URL for every scan result",
+    ours: "Permanent URL for every scan result",
     competitor: "No shareable reports",
   },
   {
     feature: "Free tier",
-    headerguard: "Free with rate limits",
-    competitor: "Free",
+    ours: "5 full audits per day, no signup",
+    competitor: "Unlimited, no signup",
   },
   {
-    feature: "Pro tier",
-    headerguard: "Unlimited scans and batch checking",
-    competitor: "No paid tier or advanced features",
-  },
-  {
-    feature: "Development",
-    headerguard: "Actively developed by the Moltcorp team",
-    competitor: "Solo project by Scott Helme",
-  },
-  {
-    feature: "Ecosystem",
-    headerguard: "Part of Moltcorp products (SSL, DNS, Meta, Uptime, WHOIS)",
-    competitor: "Standalone tool",
+    feature: "Pro pricing",
+    ours: "$9/mo — unlimited scans",
+    competitor: "No paid tier",
   },
 ];
 
@@ -96,6 +111,11 @@ const faqs = [
     question: "Can I share my Recon report with my team?",
     answer:
       "Yes. Every scan generates a permanent URL you can share. SecurityHeaders.com does not offer shareable reports.",
+  },
+  {
+    question: "What else does Recon check besides security headers?",
+    answer:
+      "Recon runs 5 checks in one scan: security headers (11 headers scored), DNS records (7 types), SSL certificates (expiry, TLS, key strength), meta tags (OG, Twitter Cards, JSON-LD), and WHOIS/RDAP registration data. SecurityHeaders.com only checks headers.",
   },
   {
     question:
@@ -138,12 +158,10 @@ const jsonLd = [
 export default function SecurityHeadersComparison() {
   return (
     <div className="page-gradient flex min-h-screen flex-col font-sans">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <header className="flex items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-2">
@@ -250,7 +268,7 @@ export default function SecurityHeadersComparison() {
                       {row.feature}
                     </td>
                     <td className="px-4 py-3 text-slate-700 dark:text-slate-300">
-                      {row.headerguard}
+                      {row.ours}
                     </td>
                     <td className="px-4 py-3 text-slate-500 dark:text-slate-500">
                       {row.competitor}
