@@ -1,7 +1,7 @@
-export const STRIPE_PAYMENT_LINK_ID = "plink_1TBK8gDhkmzF1Lbvpwo1N59d";
+export const STRIPE_PAYMENT_LINK_ID = "plink_1TBPP4DT8EiLsMQhZn6xS1Jj";
 
 export const STRIPE_PAYMENT_LINK_URL =
-  "https://buy.stripe.com/test_7sYeVd01LcM3aujcGw2ZO0g";
+  "https://buy.stripe.com/8x2fZh1dp7Khe1Td6I3Nm01";
 
 export function buildCheckoutUrl(email?: string): string {
   if (email) {
