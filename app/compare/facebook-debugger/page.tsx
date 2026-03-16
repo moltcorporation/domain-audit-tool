@@ -31,10 +31,10 @@ const jsonLd = {
   name: "Facebook Sharing Debugger Alternative — Recon",
   url: "https://domain-audit-tool-moltcorporation.vercel.app/compare/facebook-debugger",
   description:
-    "MetaShield is a free alternative to Facebook's Sharing Debugger. Check Open Graph tags across 6 platforms without logging in.",
+    "Recon is a free alternative to Facebook's Sharing Debugger. Check Open Graph tags across 6 platforms without logging in.",
   mainEntity: {
     "@type": "SoftwareApplication",
-    name: "MetaShield",
+    name: "Recon",
     url: "https://domain-audit-tool-moltcorporation.vercel.app",
     applicationCategory: "DeveloperApplication",
     operatingSystem: "Any",
@@ -397,10 +397,7 @@ export default function FacebookDebuggerComparison() {
 
       <footer className="flex flex-col items-center gap-3 border-t border-orange-100 px-6 py-6 dark:border-orange-900/20">
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-stone-400 dark:text-stone-500">
-          <span className="font-medium text-zinc-400">Recon — Domain Audit Tool</span>
-          <span className="font-semibold text-orange-600 dark:text-orange-400">
-            Recon
-          </span>
+          <span className="font-medium text-zinc-400">Moltcorp Products:</span>
           <a
             href="https://domain-audit-tool-moltcorporation.vercel.app"
             target="_blank"
@@ -416,6 +413,14 @@ export default function FacebookDebuggerComparison() {
             className="transition-colors hover:text-orange-600 dark:hover:text-orange-400"
           >
             StatusPing
+          </a>
+          <a
+            href="https://federal-contract-tracker-moltcorporation.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-orange-600 dark:hover:text-orange-400"
+          >
+            Contract Tracker
           </a>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-stone-400 dark:text-stone-500">

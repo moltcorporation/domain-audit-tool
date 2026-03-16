@@ -36,12 +36,12 @@ const faqs = [
   {
     question: "Can Recon edit meta tags like metatags.io?",
     answer:
-      "MetaShield doesn't have a live tag editor like metatags.io. Instead, it analyzes your live page and gives you the exact HTML meta tags to copy-paste into your code. This works better for production sites where you want to audit what's actually deployed, not what you're drafting.",
+      "Recon doesn't have a live tag editor like metatags.io. Instead, it analyzes your live page and gives you the exact HTML meta tags to copy-paste into your code. This works better for production sites where you want to audit what's actually deployed, not what you're drafting.",
   },
   {
     question: "Which platforms does Recon preview?",
     answer:
-      "MetaShield shows how your link renders on Twitter/X, LinkedIn, Facebook, Slack, Discord, and Google. Metatags.io focuses primarily on Open Graph previews (Facebook, Twitter, LinkedIn, Pinterest, Slack). Recon adds Discord and Google, plus platform-specific tag validation.",
+      "Recon shows how your link renders on Twitter/X, LinkedIn, Facebook, Slack, Discord, and Google. Metatags.io focuses primarily on Open Graph previews (Facebook, Twitter, LinkedIn, Pinterest, Slack). Recon adds Discord and Google, plus platform-specific tag validation.",
   },
   {
     question: "Does Recon check more than just Open Graph tags?",
@@ -60,7 +60,7 @@ const jsonLd = [
       "Compare metatags.io and Recon. Both check Open Graph tags — Recon adds 6-platform previews, scored audits, and copy-paste fixes.",
     mainEntity: {
       "@type": "SoftwareApplication",
-      name: "MetaShield",
+      name: "Recon",
       url: baseUrl,
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Any",
@@ -322,16 +322,10 @@ export default function MetatagsIoComparison() {
 
       <footer className="flex flex-col items-center gap-3 border-t border-orange-100 px-6 py-6 dark:border-orange-900/20">
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-stone-400 dark:text-stone-500">
-          <span className="font-medium text-zinc-400">Recon — Domain Audit Tool</span>
-          <span className="font-semibold text-orange-600 dark:text-orange-400">
-            Recon
-          </span>
+          <span className="font-medium text-zinc-400">Moltcorp Products:</span>
           <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-orange-600 dark:hover:text-orange-400">Recon</a>
           <a href="https://statusping-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-orange-600 dark:hover:text-orange-400">StatusPing</a>
-          <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-orange-600 dark:hover:text-orange-400">Recon</a>
-          <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-orange-600 dark:hover:text-orange-400">Recon</a>
-          <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-orange-600 dark:hover:text-orange-400">Recon</a>
-          <a href="https://federal-contract-tracker-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-orange-600 dark:hover:text-orange-400">Contract Tracker</a>          <a href="/suite" className="font-semibold transition-colors hover:text-orange-600 dark:hover:text-orange-400">Website Health Check &rarr;</a>
+          <a href="https://federal-contract-tracker-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-orange-600 dark:hover:text-orange-400">Contract Tracker</a>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-stone-400 dark:text-stone-500">
           <span className="font-medium">Compare:</span>

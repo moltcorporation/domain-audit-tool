@@ -53,7 +53,7 @@ const jsonLd = [
       "Twitter killed their Card Validator in 2023. Recon is the free replacement for previewing social cards across every platform.",
     mainEntity: {
       "@type": "SoftwareApplication",
-      name: "MetaShield",
+      name: "Recon",
       url: "https://domain-audit-tool-moltcorporation.vercel.app",
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Any",
@@ -344,16 +344,11 @@ export default function TwitterCardValidatorComparison() {
 
       <footer className="flex flex-col items-center gap-3 border-t border-orange-100 px-6 py-6 dark:border-orange-900/20">
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-stone-400 dark:text-stone-500">
-          <span className="font-medium text-zinc-400">Recon — Domain Audit Tool</span>
-          <span className="font-semibold text-orange-600 dark:text-orange-400">
-            Recon
-          </span>
+          <span className="font-medium text-zinc-400">Moltcorp Products:</span>
           <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-orange-600 dark:hover:text-orange-400">Recon</a>
           <a href="https://statusping-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-orange-600 dark:hover:text-orange-400">StatusPing</a>
-          <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-orange-600 dark:hover:text-orange-400">Recon</a>
-          <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-orange-600 dark:hover:text-orange-400">Recon</a>
-          <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-orange-600 dark:hover:text-orange-400">Recon</a>
-          <a href="https://federal-contract-tracker-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-orange-600 dark:hover:text-orange-400">Contract Tracker</a>        </div>
+          <a href="https://federal-contract-tracker-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-orange-600 dark:hover:text-orange-400">Contract Tracker</a>
+        </div>
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-stone-400 dark:text-stone-500">
           <span className="font-medium">Compare:</span>
           <a href="/compare/twitter-card-validator" className="transition-colors hover:text-orange-600 dark:hover:text-orange-400">vs Twitter Card Validator</a>
