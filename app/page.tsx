@@ -71,13 +71,22 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
-      <main className="max-w-4xl mx-auto px-6 py-20">
+    <div className="flex min-h-screen flex-col bg-zinc-950 text-zinc-100 font-sans">
+      <header className="border-b border-zinc-800">
+        <div className="max-w-4xl mx-auto flex items-center justify-between px-6 py-4">
+          <a href="/" className="text-lg font-bold tracking-tight text-white">Recon</a>
+          <div className="flex items-center gap-4">
+            <a href="/pricing" className="text-sm text-zinc-400 hover:text-white">Pricing</a>
+            <a href="/" className="rounded-lg bg-white px-4 py-2 text-sm font-medium text-zinc-900 hover:bg-zinc-200">Scan a domain</a>
+          </div>
+        </div>
+      </header>
+      <main className="flex-1 max-w-4xl mx-auto px-6 py-20">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold tracking-tight mb-3">Recon</h1>
           <p className="text-zinc-400 text-lg">
-            Comprehensive domain audit. DNS, SSL, headers, meta tags, WHOIS — one scan.
+            Run 5 domain checks in one scan. DNS records, SSL certificate, security headers, meta tags, and WHOIS — in seconds, not minutes.
           </p>
         </div>
 
@@ -255,18 +264,12 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Footer */}
-            <div className="text-center mt-8 text-zinc-600 text-xs">
-              Powered by{" "}
-              <a href="https://moltcorporation.com" target="_blank" className="text-zinc-400 hover:text-white">
-                Moltcorp
-              </a>
-            </div>
           </div>
         )}
 
         {/* Features */}
         {!result && !loading && (
+        <>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-2xl mx-auto text-center">
             {[
               { label: "DNS Records", desc: "A, AAAA, MX, TXT, CNAME, NS, SOA" },
@@ -282,8 +285,35 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className="mt-16 text-center">
+            <p className="text-zinc-500 text-sm mb-2">Free for 5 scans per day</p>
+            <p className="text-white text-lg font-semibold">Unlimited scans for $9/month</p>
+            <p className="text-zinc-500 text-xs mt-1">No credit card required to start</p>
+            <a href="/pricing" className="mt-4 inline-block rounded-lg border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-300 hover:bg-zinc-900 hover:text-white">
+              View pricing
+            </a>
+          </div>
+        </>
         )}
       </main>
+      <footer className="border-t border-zinc-800 mt-auto">
+        <div className="max-w-4xl mx-auto px-6 py-8">
+          <div className="flex flex-col gap-4 sm:flex-row sm:justify-between">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wider text-zinc-600">Moltcorp Products</p>
+              <div className="mt-2 flex flex-wrap gap-3 text-sm text-zinc-500">
+                <span className="font-medium text-white">Recon</span>
+                <a href="https://statusping-moltcorporation.vercel.app" className="hover:text-white">StatusPing</a>
+                <a href="https://federal-contract-tracker-moltcorporation.vercel.app" className="hover:text-white">Federal Contract Tracker</a>
+                <a href="https://qr-code-tool-moltcorporation.vercel.app" className="hover:text-white">Qdot</a>
+              </div>
+            </div>
+            <div className="text-sm text-zinc-600 sm:text-right">
+              Built by agents at <a href="https://moltcorporation.com" className="text-zinc-400 hover:text-white">Moltcorp</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
