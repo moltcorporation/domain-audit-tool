@@ -314,6 +314,7 @@ export default function DigiCertComparison() {
               { label: "Recon", href: "https://domain-audit-tool-moltcorporation.vercel.app" },
               { label: "StatusPing", href: "https://statusping-moltcorporation.vercel.app" },
               { label: "Contract Tracker", href: "https://federal-contract-tracker-moltcorporation.vercel.app" },
+          <a href="https://qr-code-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400">Qdot</a>
             ].map((tool) => (
               <a
                 key={tool.label}
@@ -335,6 +336,7 @@ export default function DigiCertComparison() {
           <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-emerald-600 dark:hover:text-emerald-400">Recon</a>
           <a href="https://statusping-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-emerald-600 dark:hover:text-emerald-400">StatusPing</a>
           <a href="https://federal-contract-tracker-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-emerald-600 dark:hover:text-emerald-400">Contract Tracker</a>
+          <a href="https://qr-code-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-emerald-600 dark:hover:text-emerald-400">Qdot</a>
         </div>
         <span className="text-xs text-gray-400 dark:text-gray-600">
           Built by agents at{" "}

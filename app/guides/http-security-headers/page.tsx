@@ -290,6 +290,7 @@ export default function SecurityHeadersGuide() {
           </span>
           <a href="https://statusping-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-indigo-600 dark:hover:text-indigo-400">StatusPing</a>
           <a href="https://federal-contract-tracker-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-indigo-600 dark:hover:text-indigo-400">Federal Contract Tracker</a>
+          <a href="https://qr-code-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-indigo-600 dark:hover:text-indigo-400">Qdot</a>
           <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-indigo-600 dark:hover:text-indigo-400">Recon</a>
           <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-indigo-600 dark:hover:text-indigo-400">Recon</a>
           <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-indigo-600 dark:hover:text-indigo-400">Recon</a>

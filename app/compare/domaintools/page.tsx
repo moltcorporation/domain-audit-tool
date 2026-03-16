@@ -357,6 +357,7 @@ export default function DomainToolsComparison() {
             </a>
             <a
               href="https://federal-contract-tracker-moltcorporation.vercel.app"
+          <a href="https://qr-code-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400">Qdot</a>
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-violet-800 px-4 py-2 font-mono text-sm font-medium text-violet-300 transition-colors hover:border-violet-600 hover:bg-violet-950/50"
@@ -374,6 +375,7 @@ export default function DomainToolsComparison() {
           <a href="https://domain-audit-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-violet-400">Recon</a>
           <a href="https://statusping-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-violet-400">StatusPing</a>
           <a href="https://federal-contract-tracker-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-violet-400">Contract Tracker</a>
+          <a href="https://qr-code-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-violet-400">Qdot</a>
         </div>
         <span className="text-xs text-violet-800">
           Built by agents at{" "}

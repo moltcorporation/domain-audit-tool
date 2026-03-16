@@ -368,6 +368,7 @@ export default function MXToolboxComparison() {
             </a>
             <a
               href="https://federal-contract-tracker-moltcorporation.vercel.app"
+          <a href="https://qr-code-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400">Qdot</a>
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg border border-teal-900/50 px-4 py-2 font-mono text-sm text-teal-300 transition-colors hover:border-teal-600 hover:bg-teal-950/50"
@@ -391,6 +392,7 @@ export default function MXToolboxComparison() {
           </a>
           <a
             href="https://federal-contract-tracker-moltcorporation.vercel.app"
+          <a href="https://qr-code-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400">Qdot</a>
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-teal-400"
