@@ -341,6 +341,7 @@ export default function MozillaObservatoryComparison() {
               {
                 label: "Contract Tracker",
                 href: "https://federal-contract-tracker-moltcorporation.vercel.app",
+          <a href="https://qr-code-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400">Qdot</a>
               },
             ].map((tool) => (
               <a
@@ -378,6 +379,7 @@ export default function MozillaObservatoryComparison() {
           </a>
           <a
             href="https://federal-contract-tracker-moltcorporation.vercel.app"
+          <a href="https://qr-code-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400">Qdot</a>
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-indigo-600 dark:hover:text-indigo-400"

@@ -577,6 +577,7 @@ export default function OGCheckersComparison() {
           </a>
           <a
             href="https://federal-contract-tracker-moltcorporation.vercel.app"
+          <a href="https://qr-code-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400">Qdot</a>
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-orange-600 dark:hover:text-orange-400"

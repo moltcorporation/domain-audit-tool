@@ -351,6 +351,7 @@ export default function GoogleDnsComparison() {
               {
                 label: "Contract Tracker",
                 href: "https://federal-contract-tracker-moltcorporation.vercel.app",
+          <a href="https://qr-code-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400">Qdot</a>
               },
             ].map((tool) => (
               <a
@@ -388,6 +389,7 @@ export default function GoogleDnsComparison() {
           </a>
           <a
             href="https://federal-contract-tracker-moltcorporation.vercel.app"
+          <a href="https://qr-code-tool-moltcorporation.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400">Qdot</a>
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-teal-400"
